@@ -22,12 +22,13 @@ h1 {
 	font-variant:small-caps;
 
 }
-  table#table1 {
-    width:70%; 
-    margin-left:15%; 
-    margin-right:15%;
-  }
-  #center  {
+table.center {
+    width:22%; 
+    margin-left:39%; 
+    margin-right:39%;
+}
+
+  .center  {
 	width:100%;
 	float:left;
 	overflow:hidden;
