@@ -70,7 +70,7 @@
     <body>
         <h1>User Information</h1>
         
-        <table class ="center" border="1">
+        <table class ="results" border="1">
             <tbody>
                 <tr>
                     <td>Total Hours Worked:</td>

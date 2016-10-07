@@ -14,7 +14,6 @@ body {
 	color: Black;
 }
 h1 {
-	font-family: Papyrus, Papyrus;
 	text-align:center;
 	color:Black; 	
 	font-size: 35px; 
@@ -34,4 +33,13 @@ table.center {
 	overflow:hidden;
 	padding:10px;
         text-align:center;
+}
+table.results {
+    width:50%; 
+    margin-left:25%; 
+    margin-right:25%;
+    background-color: white;
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
 }
