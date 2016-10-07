@@ -23,10 +23,8 @@
         double grossPay;
         double totalHours = hoursWorked;
         double overtimeRate = hourlyPay * 1.5;
-        double pretaxDeduction=0;
         double pretaxPay;
         double taxAmount;
-        double postTaxDeduction=0;
         double postTaxPay;
         double netPay;
         //determine if employee worked overtime
@@ -42,27 +40,25 @@
         grossPay = hoursWorked*hourlyPay + overtimeHours * overtimeRate;
         //determine if employee used a pre tax deduction
         if(preTax>0){
-            pretaxDeduction = grossPay * preTax;
-            pretaxPay = grossPay - pretaxDeduction;
+            pretaxPay = grossPay - preTax;
         }
         else{
             pretaxPay = grossPay;
         }
         //determine employees tax bracket
         if(grossPay>500){
-            taxAmount = .22 * grossPay;
+            taxAmount = .22 * pretaxPay;
             netPay = pretaxPay - taxAmount;
         }
         else{
-            taxAmount = .18 * grossPay;
+            taxAmount = .18 * pretaxPay;
             netPay = pretaxPay - taxAmount;
         }
         //set postTaxPay equal too net pay calculated in previous step
         postTaxPay = netPay;
         //determine if employee used postTax deduction
         if(postTax>0){
-            postTaxDeduction = postTaxPay * postTax;
-            netPay = netPay - postTaxDeduction;
+            netPay = netPay - postTax;
         }
       
         %>
@@ -94,7 +90,7 @@
                 </tr>
                 <tr>
                     <td>Pre-tax Deduct:</td>
-                    <td><%= pretaxDeduction %></td>
+                    <td><%= preTax %></td>
                 </tr>
                 <tr>
                     <td>Pre-tax Pay:</td>
@@ -110,7 +106,7 @@
                 </tr>
                 <tr>
                     <td>Post-tax Deduct:</td>
-                    <td><%= postTaxDeduction %></td>
+                    <td><%= postTax %></td>
                 </tr>
                 <tr>
                     <td>Net Pay:</td>
